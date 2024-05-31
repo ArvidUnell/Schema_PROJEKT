@@ -64,6 +64,16 @@ namespace Schema_PROJEKT
                     MessageBox.Show("En annan sal med det namnet finns redan", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                else if (tbxSalNamn.Text.Contains(',') || tbxSalNamn.Text.Contains(';') || tbxSalNamn.Text.Contains('.'))
+                {
+                    MessageBox.Show("Namnet kan inte innehålla , eller ; eller .", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (tbxÖvrigt.Text.Contains(',') || tbxÖvrigt.Text.Contains(';') || tbxÖvrigt.Text.Contains('.'))
+                {
+                    MessageBox.Show("Övrigt kan inte innehålla , eller ; eller .", "Fel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
 
             DialogResult = DialogResult.OK;
